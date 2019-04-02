@@ -36,7 +36,7 @@ RUN curl -o ~/miniconda.sh -O  https://repo.continuum.io/miniconda/Miniconda3-la
      echo "conda activate $ENV_NAME" >> ~/.bashrc
 ENV PATH /opt/conda/envs/$ENV_NAME/bin:/opt/conda/bin:$PATH
 
-RUN wget https://www.dropbox.com/s/lrvwfehqdcxoza8/saved_models.zip?dl=1 && \
+RUN wget https://www.dropbox.com/s/lrvwfehqdcxoza8/saved_models.zip && \
 	unzip saved_models.zip -d /models
 
 COPY tmux.conf /root/.tmux.conf
