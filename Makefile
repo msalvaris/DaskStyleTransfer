@@ -19,6 +19,7 @@ docker_exec:=docker exec -it $(NAME)
 scheduler:=127.0.0.1:8786
 log_config:=style_transfer/logging.ini
 model_dir:=/models/saved_models
+style:=mosaic
 
 # MODIFY THESE
 data_volume=-v /mnt/pipelines:/data
@@ -66,7 +67,7 @@ stop-workers:
 
 
 run-pipeline:
-	docker exec -e LOG_CONFIG=$(log_config) -it $(NAME) python style_transfer/style_transfer_local.py ${scheduler} ${MODEL_DIR} ${STYLE} ${FILEPATH} ${OUTPUT_PATH}
+	docker exec -e LOG_CONFIG=$(log_config) -it $(NAME) python style_transfer/style_transfer_local.py ${scheduler} ${model_dir} ${style} ${filepath} ${output_path}
 
 stop:
 	docker stop $(NAME)
