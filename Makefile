@@ -66,7 +66,7 @@ stop-workers:
 
 
 run-pipeline:
-	docker exec -e LOG_CONFIG=$(log_config) -it $(NAME) python ../style_transfer/style_transfer_local.py ${scheduler} ${MODEL_DIR} ${STYLE} ${FILEPATH} ${OUTPUT_PATH}
+	docker exec -e LOG_CONFIG=$(log_config) -it $(NAME) python style_transfer/style_transfer_local.py ${scheduler} ${MODEL_DIR} ${STYLE} ${FILEPATH} ${OUTPUT_PATH}
 
 stop:
 	docker stop $(NAME)
