@@ -1,0 +1,15 @@
+name: py36
+channels:
+ - conda-forge
+ - pytorch
+dependencies:
+  - python=3.6
+  - pyyaml
+  - pytorch=1.0.0
+  - torchvision
+  - dask
+  - bokeh
+  - pip:
+    - fire
+
+    
